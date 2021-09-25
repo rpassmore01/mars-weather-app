@@ -59,6 +59,11 @@
   }
 }
 
+.explanationText {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .timeFormat {
   text-align: center;
 }
