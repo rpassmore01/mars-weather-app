@@ -9,7 +9,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 1s ease;
+    animation: App-logo-spin infinite 2s ease-in-out;
   }
 }
 
@@ -75,4 +75,11 @@
 
 .imgContainer {
   margin: 20px 100px;
+}
+
+.loadingImg {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 100px;
 }
