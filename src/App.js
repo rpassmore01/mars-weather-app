@@ -6,7 +6,6 @@ export default class App extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            setLoaded: true,
             dataObj: null
 
         }
@@ -24,7 +23,7 @@ export default class App extends React.Component{
     render() {
         return(
             <div>
-                {this.state.loaded || !this.state.dataObj ? (
+                {!this.state.dataObj ? (
                     <h1>loading...</h1>
                 ) : (
                     <h1>{this.state.dataObj.copyright}</h1>
