@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import loading from './loading.svg'
 import './App.css';
 import React from "react";
 
@@ -44,7 +45,7 @@ export default class App extends React.Component{
         return(
             <div>
                 {!this.state.dataObj ? (
-                    <h1>loading...</h1>
+                    <img src={loading} className="App-logo" />
                 ) : (
                     <div>
                         <h1 className="photoName">{this.state.dataObj.copyright}</h1>
