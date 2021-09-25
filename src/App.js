@@ -6,8 +6,9 @@ export default class App extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            dataObj: null,
-            loaded: true
+            setLoaded: true,
+            dataObj: null
+
         }
     }
 
