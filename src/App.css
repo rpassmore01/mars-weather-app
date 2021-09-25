@@ -116,18 +116,25 @@ h2 {
   align-items: center;
 }
 
-/*.roverBtn {
-  max-width: 100px;
+.roverBtn {
+  border-radius: 15px;
+  min-height: 40px;
+  min-width: 110px;
   margin-top: 1rem;
-  background-color: #3B5494;
-  border: none;
-  border-radius: 10px;
-  padding: 5px 20px;
-  transition: transform 500ms ease, background-color 200ms ease;
+  font-weight: 550;
+  transition: background 500ms ease, font-size 500ms ease,max-width 500ms ease,font-weight 500ms ease;
 }
 
 .roverBtn:hover {
-  background-color: rgba(59, 84, 148, 0.73);
-  transform: translateY(-5px);
+  background: repeating-linear-gradient(45deg, red 0%, yellow 7.14%, rgb(0,255,0) 14.28%,
+  rgb(0,255,255) 21.4%, cyan 28.56%, blue 35.7%, magenta 42.84%, red 50%);
+  background-size: 600vw 600vw;
+  min-height: 60px;
+  font-weight: 800;
+  font-size: 80px;
+
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+
+  animation: slide 1s linear infinite forwards;
 }
- */
