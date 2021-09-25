@@ -43,7 +43,7 @@ export default class App extends React.Component{
                         <h1>Taken from NASA APOD {this.state.today}</h1>
                         <p>{this.state.dataObj.explanation}</p>
                         <div className="imgContainer">
-                            <img src={this.state.dataObj.url} className="apodImg"/>
+                            <img src={this.state.dataObj.hdurl} className="apodImg"/>
                         </div>
                     </div>
                 )}
