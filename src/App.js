@@ -34,8 +34,9 @@ export default class App extends React.Component{
         const url = `https://api.nasa.gov/planetary/apod?api_key=4yGlazBb3PftsRRldGwC15JNnjayMwNxE4pEPc1P`;
         const response = await fetch(url);
         const data = await response.json();
-        this.setState({dataObj: data});
-        console.log(this.state.dataObj.copyright)
+        window.setInterval(()=>{
+            this.setState({dataObj: data});
+        }, 3000)
         this.getDate();
     }
 
@@ -46,7 +47,9 @@ export default class App extends React.Component{
         return(
             <div>
                 {!this.state.dataObj ? (
-                    <img src={loading} className="App-logo" />
+                    <div className="loadingImg">
+                        <img src={loading} className="App-logo" />
+                    </div>
                 ) : (
                     <div>
                         <h1 className="photoName">{this.state.dataObj.copyright}</h1>
