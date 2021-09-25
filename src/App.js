@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import loading from './loading.svg'
 import './App.css';
 import React from "react";
@@ -66,7 +65,7 @@ export default class App extends React.Component{
                             <p className="explanationText"> {this.state.apodData.explanation}</p>
                                 <img src={this.state.apodData.hdurl} className="apodImg"/>
                         </div>
-                        {!this.state.roverData ? <p></p> : (
+                        {!this.state.roverData ? <p> </p> : (
                             <div className="infoCard rover">
                                 <h2>img id:{this.state.roverData.photos[this.state.roverPhotoIndex].id}</h2>
                                 <p>Browse {this.state.photoArrLength} from Nasa's Mars Curiosity Rover!</p>
