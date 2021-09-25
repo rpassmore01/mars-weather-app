@@ -60,7 +60,6 @@
 }
 
 .explanationText {
-  margin: 0 100px;
   text-align: center;
 }
 
@@ -73,13 +72,25 @@
   height: auto;
 }
 
-.imgContainer {
-  margin: 10vh 10vw;
-}
-
 .loadingImg {
   display: flex;
   justify-content: center;
   align-content: center;
   margin: 10vh 10vw;
+}
+
+.infoCard {
+  background-color: lightgrey;
+  border-radius: 15px;
+  max-width: 75%;
+  padding: 15px 40px;
+  margin-bottom: 15px;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
 }
