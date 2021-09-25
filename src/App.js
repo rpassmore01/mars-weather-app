@@ -13,7 +13,6 @@ export default class App extends React.Component{
             roverPhotoIndex: 0,
             photoArrLength: 0
         }
-
     }
 
     getDate() {
