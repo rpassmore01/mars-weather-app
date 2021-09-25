@@ -108,3 +108,15 @@ body {
 h2 {
   text-align: center;
 }
+
+.rover {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.roverBtn {
+  max-width: 100px;
+  margin-top: 1rem;
+}

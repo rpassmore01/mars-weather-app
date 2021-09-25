@@ -10,7 +10,8 @@ export default class App extends React.Component{
             apodData: null,
             roverData: null,
             time: '',
-            roverPhotoIndex: 0
+            roverPhotoIndex: 0,
+            photoArrLength: 0
         }
 
     }
@@ -38,8 +39,11 @@ export default class App extends React.Component{
         const rover = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=4yGlazBb3PftsRRldGwC15JNnjayMwNxE4pEPc1P`);
         const roverData = await rover.json();
         window.setInterval(()=>{
-            this.setState({apodData: apodData});
-            this.setState({roverData: roverData})
+            this.setState({
+                apodData: apodData,
+                roverData: roverData,
+                photoArrLength: roverData.photos.length
+            });
         }, 3000)
         this.getDate();
     }
@@ -50,7 +54,7 @@ export default class App extends React.Component{
         },5000)
         return(
             <div>
-                {!this.state.apodData && !this.state.roverData ? (
+                {!this.state.apodData ? (
                     <div className="loadingImg">
                         <img src={loading} className="App-logo" />
                     </div>
@@ -63,6 +67,13 @@ export default class App extends React.Component{
                             <p className="explanationText"> {this.state.apodData.explanation}</p>
                                 <img src={this.state.apodData.hdurl} className="apodImg"/>
                         </div>
+                        {!this.state.roverData ? <p></p> : (
+                            <div className="infoCard rover">
+                                <h2>img id:{this.state.roverData.photos[this.state.roverPhotoIndex].id}</h2>
+                                <p>Browse {this.state.photoArrLength} from Nasa's Mars Curiosity Rover!</p>
+                                <img src={this.state.roverData.photos[this.state.roverPhotoIndex].img_src} className="apodImg"/>
+                                <button className="roverBtn" onClick={()=>{this.setState({roverPhotoIndex: Math.floor(Math.random()*this.state.photoArrLength)})}}>Change Photo!</button>
+                            </div>)}
                     </div>
                 )}
             </div>
