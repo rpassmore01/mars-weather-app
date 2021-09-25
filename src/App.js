@@ -26,8 +26,13 @@ export default class App extends React.Component{
                 {!this.state.dataObj ? (
                     <h1>loading...</h1>
                 ) : (
-                    <h1 className="photoName">{this.state.dataObj.copyright}</h1>
-
+                    <div>
+                        <h1 className="photoName">{this.state.dataObj.copyright}</h1>
+                        <p>{this.state.dataObj.explanation}</p>
+                        <div className="imgContainer">
+                            <img src={this.state.dataObj.url} className="apodImg"/>
+                        </div>
+                    </div>
                 )}
             </div>
         );
