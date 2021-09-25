@@ -1,5 +1,5 @@
-.root {
-  background-color: #7e7e7e;
+body {
+  background-color: #e0e0e0;
 }
 
 .App {
@@ -42,6 +42,11 @@
 }
 
 .photoName{
+  /*
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+
+   */
   user-select: none;
   color: white;
   text-align: center;
@@ -85,7 +90,7 @@
 }
 
 .infoCard {
-  background-color: lightgrey;
+  background-color: #cecece;
   border-radius: 15px;
   max-width: 75%;
   padding: 15px 40px;
