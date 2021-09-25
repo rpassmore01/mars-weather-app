@@ -40,7 +40,7 @@ export default class App extends React.Component{
     }
 
     render() {
-        const timeInterval = window.setInterval(()=>{
+        window.setInterval(()=>{
             this.getDate()
         },5000)
         return(
