@@ -6,20 +6,20 @@ export default class App extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            dataObj: null,
-            today: "",
-            dd: "",
-            mm: "",
-            yyyy: ""
+            dataObj: null
         }
     }
+
     getDate() {
         let today = new Date();
-        let dd = String(today.getDate()).padStart(2, '0');
-        let mm = String(today.getMonth() + 1).padStart(2, '0'); //janvier = 0
-        let yyyy = today.getFullYear();
+        let hours = String(today.getHours());
+        let min = String(today.getMinutes());
 
-        return dd + '/' + mm + '/' + yyyy;
+        if(min < 10){
+            min = "0" + min;
+        }
+
+        return hours + ":" + min;
     }
 
 
@@ -40,8 +40,8 @@ export default class App extends React.Component{
                 ) : (
                     <div>
                         <h1 className="photoName">{this.state.dataObj.copyright}</h1>
-                        <h1>Taken from NASA APOD {this.state.today}</h1>
-                        <p>{this.state.dataObj.explanation}</p>
+                        <h3 className="timeFormat">Taken from NASA APOD at {this.getDate()}</h3>
+                        <p> {this.state.dataObj.explanation}</p>
                         <div className="imgContainer">
                             <img src={this.state.dataObj.hdurl} className="apodImg"/>
                         </div>

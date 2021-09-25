@@ -61,6 +61,10 @@
   }
 }
 
+.timeFormat {
+  text-align: center;
+}
+
 .apodImg {
   max-width: 100%;
   height: auto;
