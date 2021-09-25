@@ -42,3 +42,12 @@
 .photoName {
   color: red;
 }
+
+.apodImg {
+  max-width: 100%;
+  height: auto;
+}
+
+.imgContainer {
+  margin: 20px 100px;
+}
