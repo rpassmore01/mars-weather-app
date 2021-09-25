@@ -38,3 +38,7 @@
     height: 75vmin;
   }
 }
+
+.photoName {
+  color: red;
+}
