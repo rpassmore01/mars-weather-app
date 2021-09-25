@@ -58,9 +58,11 @@ export default class App extends React.Component{
                     </div>
                 ) : (
                     <div className="mainContainer">
-                        <h1 className="photoName">{this.state.apodData.title}</h1>
+                        <h1>NASA API WEBSITE</h1>
+                        <p>Here you can see the Astronomy Picture of the Day that updates everyday around midnight, as well as the curiosity rovers photos.</p>
                         <h3 className="timeFormat">Taken from NASA APOD at {this.state.time}</h3>
                         <div className="infoCard">
+                            <h1 className="photoName">{this.state.apodData.title}</h1>
                             <h2>{this.state.apodData.copyright}</h2>
                             <p className="explanationText"> {this.state.apodData.explanation}</p>
                                 <img src={this.state.apodData.hdurl} className="apodImg"/>
