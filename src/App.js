@@ -6,7 +6,8 @@ export default class App extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            dataObj: null
+            dataObj: null,
+            time: ''
         }
     }
 
@@ -18,10 +19,14 @@ export default class App extends React.Component{
         if(min < 10){
             min = "0" + min;
         }
+        if(hours>12){
+            hours = parseInt(hours) - 12;
+        }
 
-        return hours + ":" + min;
+        this.setState({
+            time: hours + ":" + min
+        })
     }
-
 
     async componentDidMount(){
         const url = `https://api.nasa.gov/planetary/apod?api_key=4yGlazBb3PftsRRldGwC15JNnjayMwNxE4pEPc1P`;
@@ -33,6 +38,9 @@ export default class App extends React.Component{
     }
 
     render() {
+        const timeInterval = window.setInterval(()=>{
+            this.getDate()
+        },5000)
         return(
             <div>
                 {!this.state.dataObj ? (
@@ -40,7 +48,7 @@ export default class App extends React.Component{
                 ) : (
                     <div>
                         <h1 className="photoName">{this.state.dataObj.copyright}</h1>
-                        <h3 className="timeFormat">Taken from NASA APOD at {this.getDate()}</h3>
+                        <h3 className="timeFormat">Taken from NASA APOD at {this.state.time}</h3>
                         <p> {this.state.dataObj.explanation}</p>
                         <div className="imgContainer">
                             <img src={this.state.dataObj.hdurl} className="apodImg"/>
