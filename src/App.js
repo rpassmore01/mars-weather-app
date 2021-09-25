@@ -54,7 +54,7 @@ export default class App extends React.Component{
                     <div>
                         <h1 className="photoName">{this.state.dataObj.copyright}</h1>
                         <h3 className="timeFormat">Taken from NASA APOD at {this.state.time}</h3>
-                        <p> {this.state.dataObj.explanation}</p>
+                        <p className="explanationText"> {this.state.dataObj.explanation}</p>
                         <div className="imgContainer">
                             <img src={this.state.dataObj.hdurl} className="apodImg"/>
                         </div>
