@@ -10,6 +10,7 @@ export default class App extends React.Component{
             dataObj: null,
             time: ''
         }
+
     }
 
     getDate() {
