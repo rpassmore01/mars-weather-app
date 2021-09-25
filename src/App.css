@@ -119,4 +119,14 @@ h2 {
 .roverBtn {
   max-width: 100px;
   margin-top: 1rem;
+  background-color: #3B5494;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 20px;
+  transition: transform 500ms ease, background-color 200ms ease;
+}
+
+.roverBtn:hover {
+  background-color: rgba(59, 84, 148, 0.73);
+  transform: translateY(-5px);
 }
