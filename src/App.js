@@ -7,8 +7,10 @@ export default class App extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            dataObj: null,
-            time: ''
+            apodData: null,
+            roverData: null,
+            time: '',
+            roverPhotoIndex: 0
         }
 
     }
@@ -31,11 +33,13 @@ export default class App extends React.Component{
     }
 
     async componentDidMount(){
-        const url = `https://api.nasa.gov/planetary/apod?api_key=4yGlazBb3PftsRRldGwC15JNnjayMwNxE4pEPc1P`;
-        const response = await fetch(url);
-        const data = await response.json();
+        const apod = await fetch(`https://api.nasa.gov/planetary/apod?api_key=4yGlazBb3PftsRRldGwC15JNnjayMwNxE4pEPc1P`);
+        const apodData = await apod.json();
+        const rover = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=4yGlazBb3PftsRRldGwC15JNnjayMwNxE4pEPc1P`);
+        const roverData = await rover.json();
         window.setInterval(()=>{
-            this.setState({dataObj: data});
+            this.setState({apodData: apodData});
+            this.setState({roverData: roverData})
         }, 3000)
         this.getDate();
     }
@@ -46,18 +50,18 @@ export default class App extends React.Component{
         },5000)
         return(
             <div>
-                {!this.state.dataObj ? (
+                {!this.state.apodData && !this.state.roverData ? (
                     <div className="loadingImg">
                         <img src={loading} className="App-logo" />
                     </div>
                 ) : (
                     <div className="mainContainer">
-                        <h1 className="photoName">{this.state.dataObj.title}</h1>
+                        <h1 className="photoName">{this.state.apodData.title}</h1>
                         <h3 className="timeFormat">Taken from NASA APOD at {this.state.time}</h3>
                         <div className="infoCard">
-                            <h2>{this.state.dataObj.copyright}</h2>
-                            <p className="explanationText"> {this.state.dataObj.explanation}</p>
-                                <img src={this.state.dataObj.hdurl} className="apodImg"/>
+                            <h2>{this.state.apodData.copyright}</h2>
+                            <p className="explanationText"> {this.state.apodData.explanation}</p>
+                                <img src={this.state.apodData.hdurl} className="apodImg"/>
                         </div>
                     </div>
                 )}
