@@ -6,9 +6,20 @@ export default class App extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            dataObj: null
-
+            dataObj: null,
+            today: "",
+            dd: "",
+            mm: "",
+            yyyy: ""
         }
+    }
+    getDate() {
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0'); //janvier = 0
+        let yyyy = today.getFullYear();
+
+        return dd + '/' + mm + '/' + yyyy;
     }
 
 
@@ -18,6 +29,7 @@ export default class App extends React.Component{
         const data = await response.json();
         this.setState({dataObj: data});
         console.log(this.state.dataObj.copyright)
+        this.getDate();
     }
 
     render() {
@@ -28,6 +40,7 @@ export default class App extends React.Component{
                 ) : (
                     <div>
                         <h1 className="photoName">{this.state.dataObj.copyright}</h1>
+                        <h1>Taken from NASA APOD {this.state.today}</h1>
                         <p>{this.state.dataObj.explanation}</p>
                         <div className="imgContainer">
                             <img src={this.state.dataObj.url} className="apodImg"/>
