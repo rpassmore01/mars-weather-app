@@ -69,7 +69,7 @@ export default class App extends React.Component{
                         </div>
                         {!this.state.roverData ? <p> </p> : (
                             <div className="infoCard rover">
-                                <h2>img id:{this.state.roverData.photos[this.state.roverPhotoIndex].id}</h2>
+                                <h2>Image ID: {this.state.roverData.photos[this.state.roverPhotoIndex].id}</h2>
                                 <p>Browse {this.state.photoArrLength} from Nasa's Mars Curiosity Rover!</p>
                                 <img src={this.state.roverData.photos[this.state.roverPhotoIndex].img_src} className="apodImg"/>
                                 <button className="roverBtn" onClick={()=>{this.setState({roverPhotoIndex: Math.floor(Math.random()*this.state.photoArrLength)})}}>Change Photo!</button>

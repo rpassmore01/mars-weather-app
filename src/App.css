@@ -76,12 +76,6 @@ body {
   text-align: center;
 }
 
-.apodImg {
-  max-width: 100%;
-  height: auto;
-  border-radius: 15px;
-}
-
 .loadingImg {
   display: flex;
   justify-content: center;
@@ -95,6 +89,14 @@ body {
   max-width: 75%;
   padding: 15px 40px;
   margin-bottom: 15px;
+}
+
+.apodImg {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
 }
 
 .mainContainer {
