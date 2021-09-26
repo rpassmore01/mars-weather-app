@@ -12,6 +12,7 @@ export default class App extends React.Component{
             roverPhotoIndex: 0,
             photoArrLength: 0
         }
+        this.changeImgIndex = this.changeImgIndex.bind(this);
     }
 
     getDate() {
@@ -28,6 +29,12 @@ export default class App extends React.Component{
 
         this.setState({
             time: hours + ":" + min
+        })
+    }
+
+    changeImgIndex(){
+        this.setState({
+            roverPhotoIndex: Math.floor(Math.random()*this.state.photoArrLength)
         })
     }
 
@@ -72,7 +79,7 @@ export default class App extends React.Component{
                                 <h2>Image ID: {this.state.roverData.photos[this.state.roverPhotoIndex].id}</h2>
                                 <p>Browse {this.state.photoArrLength} from Nasa's Mars Curiosity Rover!</p>
                                 <img src={this.state.roverData.photos[this.state.roverPhotoIndex].img_src} className="apodImg"/>
-                                <button className="roverBtn" onClick={()=>{this.setState({roverPhotoIndex: Math.floor(Math.random()*this.state.photoArrLength)})}}>Change Photo!</button>
+                                <button className="roverBtn" onClick={this.changeImgIndex} >Change Photo!</button>
                             </div>)}
                     </div>
                 )}
