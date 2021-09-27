@@ -11,9 +11,12 @@ export default class App extends React.Component{
             time: '',
             roverPhotoIndex: 0,
             photoArrLength: 0,
-            sol: 0
+            sol: 0,
+            SolInput: ''
         }
         this.changeImgIndex = this.changeImgIndex.bind(this);
+        this.changeInput = this.changeInput.bind(this);
+        this.changeSol = this.changeSol.bind(this);
     }
 
     getDate() {
@@ -39,21 +42,41 @@ export default class App extends React.Component{
         })
     }
 
-    async componentDidMount(){
-        const randomSol = Math.round(Math.floor(Math.random()*1000))
+    componentDidMount(){
+        this.fetchData();
+        this.fetchSol(this.state.sol);
+    }
+
+    async fetchData(){
         const apod = await fetch(`https://api.nasa.gov/planetary/apod?api_key=4yGlazBb3PftsRRldGwC15JNnjayMwNxE4pEPc1P`);
         const apodData = await apod.json();
-        const rover = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${randomSol}&api_key=4yGlazBb3PftsRRldGwC15JNnjayMwNxE4pEPc1P`);
-        const roverData = await rover.json();
         window.setInterval(()=>{
             this.setState({
                 apodData: apodData,
-                roverData: roverData,
-                photoArrLength: roverData.photos.length,
-                sol: randomSol
             },)
         }, 3000)
         this.getDate();
+    }
+
+    async fetchSol (inputSol){
+        const rover = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${inputSol}&api_key=4yGlazBb3PftsRRldGwC15JNnjayMwNxE4pEPc1P`);
+        const roverData = await rover.json();
+        this.setState({
+            roverData: roverData,
+            photoArrLength: roverData.photos.length,
+            sol: inputSol
+        })
+    }
+
+    changeInput(event){
+        this.setState({
+            SolInput:event.target.value
+        })
+    }
+
+    changeSol(event){
+        this.fetchSol(this.state.SolInput)
+        event.preventDefault()
     }
 
     render() {
@@ -88,6 +111,10 @@ export default class App extends React.Component{
                                         <img src={this.state.roverData.photos[this.state.roverPhotoIndex].img_src} className="apodImg"/>
                                     </div>
                                 )}
+                                <form onSubmit={this.changeSol}>
+                                    <input type="text" value={this.state.SolInput} onChange={this.changeInput}/>
+                                    <button type="submit">Change Sol</button>
+                                </form>
                                 <button className="roverBtn" onClick={this.changeImgIndex} >Change Photo!</button>
                             </div>)}
                     </div>
