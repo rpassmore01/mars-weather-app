@@ -118,6 +118,35 @@ h2 {
   align-items: center;
 }
 
+.change-sol {
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-top: 2vh;
+  outline: 0;
+  background-color: #f5f5f5;
+}
+
+.change-sol:hover, .change-sol:focus {
+  border: 1px solid #009688;
+  background-color: white;
+}
+
+.change-sol-Btn {
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-top: 2vh;
+  outline: 0;
+  background-color: #f5f5f5;
+}
+
+.change-sol-Btn:hover {
+  border: 1px solid #009688;
+  background-color: white;
+}
+.change-sol-Btn:active {
+  background-color: #b2b2b2;
+}
+
 .roverBtn {
   border-radius: 15px;
   min-height: 40px;
