@@ -140,3 +140,11 @@ h2 {
 
   animation: slide 1s linear infinite forwards;
 }
+
+.onLoad p{
+  text-align: center;
+}
+
+.mainContainer p {
+  text-align: center;
+}
