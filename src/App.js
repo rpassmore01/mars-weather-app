@@ -128,8 +128,8 @@ export default class App extends React.Component{
                                     </div>
                                 )}
                                 <form onSubmit={this.changeSol}>
-                                    <input class="change-sol" type="text" value={this.state.SolInput} onChange={this.changeInput}/>
-                                    <button class="change-sol-Btn" type="submit">Change Sol</button>
+                                    <input className="change-sol" type="text" value={this.state.SolInput} onChange={this.changeInput}/>
+                                    <button className="change-sol-Btn" type="submit">Change Sol</button>
                                 </form>
                                 <button className="roverBtn" onClick={this.changeImgIndex} >Change Photo!</button>
                             </div>)}
