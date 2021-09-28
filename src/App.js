@@ -1,6 +1,7 @@
 import loading from './loading.svg'
 import './App.css';
 import React from "react";
+import ReactPlayer from "react-player";
 
 export default class App extends React.Component{
     constructor(props) {
@@ -111,7 +112,11 @@ export default class App extends React.Component{
                             <h1 className="photoName">{this.state.apodData.title}</h1>
                             <h2>{this.state.apodData.copyright}</h2>
                             <p className="explanationText"> {this.state.apodData.explanation}</p>
-                                <img src={this.state.apodData.hdurl} className="apodImg"/>
+
+                                <img className="apodImg" src={this.state.apodData.hdurl}/>
+
+                                {/* Video Support */}
+                                <ReactPlayer className="apodImg" url={this.state.apodData.url}/>
                         </div>
 
                         {/* Card 2 (Curiosity) */}
