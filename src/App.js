@@ -87,6 +87,9 @@ export default class App extends React.Component{
     changeSol(event){
         this.fetchSol(this.state.SolInput)
         event.preventDefault()
+        this.setState({
+            SolInput: ''
+        })
     }
 
     render() {
@@ -134,7 +137,7 @@ export default class App extends React.Component{
                                         <img src={this.state.roverData.photos[this.state.roverPhotoIndex].img_src} className="apodImg"/>
                                     </div>
                                 )}
-                                <form onSubmit={this.changeSol}>
+                                <form onSubmit={this.changeSol} className="rover-form">
                                     <input className="change-sol" type="text" value={this.state.SolInput} onChange={this.changeInput}/>
                                     <button className="change-sol-Btn" type="submit">Change Sol</button>
                                 </form>
