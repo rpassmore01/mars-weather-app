@@ -76,12 +76,14 @@ export default class App extends React.Component{
         })
     }
 
+    //Change input when typing in the change sol input
     changeInput(event){
         this.setState({
             SolInput:event.target.value
         })
     }
 
+    //Updates the current sol by refetching the Mars Rover Api to the inputed sol
     changeSol(event){
         this.fetchSol(this.state.SolInput)
         event.preventDefault()
