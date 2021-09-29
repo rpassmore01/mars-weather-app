@@ -18,6 +18,7 @@ export default class App extends React.Component{
 
         // Load defaults
         this.changeImgIndex = this.changeImgIndex.bind(this);
+        this.changeImgIndexA = this.changeImgIndexA.bind(this);
         this.changeInput = this.changeInput.bind(this);
         this.changeSol = this.changeSol.bind(this);
     }
@@ -51,6 +52,16 @@ export default class App extends React.Component{
         this.setState({
             roverPhotoIndex: Math.floor(Math.random()*this.state.photoArrLength)
         })
+    }
+
+    // Change roverPhotoIndex by a specified value
+    changeImgIndexA(value) {
+        let newValue = this.state.roverPhotoIndex + value;
+        if(newValue < this.state.photoArrLength - 1 && newValue >= 0) {
+            this.setState({
+                roverPhotoIndex: newValue
+            })
+        }
     }
 
     // Pull JSON from NASA's APDO API
@@ -136,7 +147,10 @@ export default class App extends React.Component{
                                     <input className="change-sol" type="text" value={this.state.SolInput} onChange={this.changeInput}/>
                                     <button className="change-sol-Btn" type="submit">Change Sol</button>
                                 </form>
-                                <button className="roverBtn" onClick={this.changeImgIndex} >Change Photo!</button>
+
+                                <button onClick={() => this.changeImgIndexA(1)} >Forward</button>
+                                <button onClick={() => this.changeImgIndexA(-1)} >Backward</button>
+
                             </div>)}
                     </div>
                 )}
