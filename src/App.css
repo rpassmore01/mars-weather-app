@@ -202,6 +202,21 @@ h2 {
   animation: slide 1s linear infinite forwards;
 }
 
+.navBtn {
+  max-width: 100px;
+  margin: 1rem;
+  background-color: #3B5494;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 20px;
+  transition: transform 500ms ease, background-color 200ms ease;
+}
+
+.navBtn:hover {
+  background-color: rgba(59, 84, 148, 0.73);
+  transform: translateY(-5px);
+}
+
 .onLoad p {
   text-align: center;
 }

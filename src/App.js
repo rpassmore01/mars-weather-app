@@ -142,7 +142,7 @@ export default class App extends React.Component{
                                 <h2>Photos are from Sol {this.state.sol}</h2>
                                 {this.state.roverData.photos.length === 0 ? (
                                     <h3>No Images On This Day!</h3>
-                                ): (
+                                ) : (
                                     <div className="onLoad">
                                         <p>Browse {this.state.photoArrLength} photos from Nasa's Mars Curiosity Rover!</p>
                                         <img src={this.state.roverData.photos[this.state.roverPhotoIndex].img_src} className="apodImg"/>
@@ -152,11 +152,11 @@ export default class App extends React.Component{
                                     <input className="change-sol" type="text" value={this.state.SolInput} onChange={this.changeInput}/>
                                     <button className="change-sol-Btn" type="submit">Change Sol</button>
                                 </form>
-
-                                <button onClick={() => this.changeImgIndexA(1)} >Forward</button>
-                                <button onClick={this.changeImgIndex} >Random</button>
-                                <button onClick={() => this.changeImgIndexA(-1)} >Backward</button>
-
+                                <div>
+                                    <button className="navBtn" onClick={() => this.changeImgIndexA(1)} >Forward</button>
+                                    <button className="navBtn" onClick={this.changeImgIndex} >Random</button>
+                                    <button className="navBtn" onClick={() => this.changeImgIndexA(-1)} >Backward</button>
+                                </div>
                             </div>)}
                     </div>
                 )}
