@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/mars-weather-app/static/css/main.c3f20449.chunk.css",
-    "main.js": "/mars-weather-app/static/js/main.6d1ea144.chunk.js",
-    "main.js.map": "/mars-weather-app/static/js/main.6d1ea144.chunk.js.map",
+    "main.js": "/mars-weather-app/static/js/main.f161129d.chunk.js",
+    "main.js.map": "/mars-weather-app/static/js/main.f161129d.chunk.js.map",
     "runtime-main.js": "/mars-weather-app/static/js/runtime-main.049d3176.js",
     "runtime-main.js.map": "/mars-weather-app/static/js/runtime-main.049d3176.js.map",
     "static/js/2.4fec46c3.chunk.js": "/mars-weather-app/static/js/2.4fec46c3.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.049d3176.js",
     "static/js/2.4fec46c3.chunk.js",
     "static/css/main.c3f20449.chunk.css",
-    "static/js/main.6d1ea144.chunk.js"
+    "static/js/main.f161129d.chunk.js"
   ]
 }
