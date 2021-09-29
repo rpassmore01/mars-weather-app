@@ -154,6 +154,7 @@ export default class App extends React.Component{
                                 </form>
 
                                 <button onClick={() => this.changeImgIndexA(1)} >Forward</button>
+                                <button onClick={this.changeImgIndex} >Random</button>
                                 <button onClick={() => this.changeImgIndexA(-1)} >Backward</button>
 
                             </div>)}
