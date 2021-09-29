@@ -87,15 +87,20 @@ export default class App extends React.Component{
         })
     }
 
+    //Change input when typing in the change sol input
     changeInput(event){
         this.setState({
             SolInput:event.target.value
         })
     }
 
+    //Updates the current sol by refetching the Mars Rover Api to the inputed sol
     changeSol(event){
         this.fetchSol(this.state.SolInput)
         event.preventDefault()
+        this.setState({
+            SolInput: ''
+        })
     }
 
     render() {
@@ -143,7 +148,7 @@ export default class App extends React.Component{
                                         <img src={this.state.roverData.photos[this.state.roverPhotoIndex].img_src} className="apodImg"/>
                                     </div>
                                 )}
-                                <form onSubmit={this.changeSol}>
+                                <form onSubmit={this.changeSol} className="rover-form">
                                     <input className="change-sol" type="text" value={this.state.SolInput} onChange={this.changeInput}/>
                                     <button className="change-sol-Btn" type="submit">Change Sol</button>
                                 </form>
