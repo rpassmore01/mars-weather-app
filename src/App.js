@@ -129,11 +129,10 @@ export default class App extends React.Component{
                             <h1 className="photoName">{this.state.apodData.title}</h1>
                             <h2>{this.state.apodData.copyright}</h2>
                             <p className="explanationText"> {this.state.apodData.explanation}</p>
-
+                            {this.state.apodData.media_type === 'image' ? (
                                 <img className="apodImg" src={this.state.apodData.hdurl}/>
-
-                                {/* Video Support */}
-                                <ReactPlayer className="apodImg" url={this.state.apodData.url}/>
+                            ) : (
+                                <ReactPlayer className="apodImg" url={this.state.apodData.url}/>)}
                         </div>
 
                         {/* Card 2 (Curiosity) */}
