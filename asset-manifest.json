@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/mars-weather-app/static/css/main.607c585f.chunk.css",
+    "main.css": "/mars-weather-app/static/css/main.b11ccd29.chunk.css",
     "main.js": "/mars-weather-app/static/js/main.0edbd788.chunk.js",
     "main.js.map": "/mars-weather-app/static/js/main.0edbd788.chunk.js.map",
     "runtime-main.js": "/mars-weather-app/static/js/runtime-main.f4d7cc44.js",
@@ -12,7 +12,7 @@
     "static/js/3.8ce6fc99.chunk.js.map": "/mars-weather-app/static/js/3.8ce6fc99.chunk.js.map",
     "index.html": "/mars-weather-app/index.html",
     "static/css/2.c9bf9d6c.chunk.css.map": "/mars-weather-app/static/css/2.c9bf9d6c.chunk.css.map",
-    "static/css/main.607c585f.chunk.css.map": "/mars-weather-app/static/css/main.607c585f.chunk.css.map",
+    "static/css/main.b11ccd29.chunk.css.map": "/mars-weather-app/static/css/main.b11ccd29.chunk.css.map",
     "static/js/2.e94b11fe.chunk.js.LICENSE.txt": "/mars-weather-app/static/js/2.e94b11fe.chunk.js.LICENSE.txt",
     "static/media/font-awesome.min.css": "/mars-weather-app/static/media/fontawesome-webfont.f691f37e.woff",
     "static/media/loading.ad2f8600.svg": "/mars-weather-app/static/media/loading.ad2f8600.svg"
@@ -21,7 +21,7 @@
     "static/js/runtime-main.f4d7cc44.js",
     "static/css/2.c9bf9d6c.chunk.css",
     "static/js/2.e94b11fe.chunk.js",
-    "static/css/main.607c585f.chunk.css",
+    "static/css/main.b11ccd29.chunk.css",
     "static/js/main.0edbd788.chunk.js"
   ]
 }
