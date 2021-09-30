@@ -34,10 +34,10 @@ body {
 
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(180deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(540deg);
   }
 }
 
@@ -205,7 +205,7 @@ h2 {
 .navBtn {
   max-width: 100px;
   margin: 1rem;
-  background-color: #3B5494;
+  background-color: #3b5494;
   border: none;
   border-radius: 10px;
   padding: 5px 20px;

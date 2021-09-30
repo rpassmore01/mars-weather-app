@@ -156,10 +156,9 @@ export default class App extends React.Component{
                                     <button className="navBtn" onClick={() => this.changeImgIndexA(1)} >Forward</button>
                                     <button className="navBtn" onClick={this.changeImgIndex} >Random</button>
                                     <button className="navBtn" onClick={() => this.changeImgIndexA(-1)} >Backward</button>
-                                </div>
-
-                            </div>)}
-                        <Footer className="footer" />
+                                    </div>
+                                </div>)}
+                            <Footer className="footer" />
                     </div>
 
                 )}
