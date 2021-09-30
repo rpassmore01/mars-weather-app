@@ -2,6 +2,7 @@ import loading from './loading.svg'
 import './App.css';
 import React from "react";
 import ReactPlayer from "react-player";
+import Footer from "./components/Footer";
 
 export default class App extends React.Component{
     constructor(props) {
@@ -157,8 +158,11 @@ export default class App extends React.Component{
                                     <button className="navBtn" onClick={this.changeImgIndex} >Random</button>
                                     <button className="navBtn" onClick={() => this.changeImgIndexA(-1)} >Backward</button>
                                 </div>
+
                             </div>)}
+                        <Footer className="footer" />
                     </div>
+
                 )}
             </div>
         );
