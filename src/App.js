@@ -149,7 +149,7 @@ export default class App extends React.Component{
                                 ) : (
                                     <div className="onLoad">
                                         <p>Browse {this.state.photoArrLength} photos from Nasa's Mars Curiosity Rover!</p>
-                                        <img src={this.state.roverData.photos[this.state.roverPhotoIndex].img_src} className="apodImg"/>
+                                        <img src={this.state.roverData.photos[this.state.roverPhotoIndex].img_src} className="rover-img"/>
                                     </div>
                                 )}
                                 <form onSubmit={this.changeSol} className="rover-form">
