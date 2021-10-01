@@ -1,8 +1,12 @@
 import loading from './loading.svg'
 import './App.css';
+import './Buttons.css'
 import React from "react";
 import ReactPlayer from "react-player";
 import Footer from "./components/Footer";
+import 'font-awesome/css/font-awesome.min.css';
+import {faRandom, faArrowRight, faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class App extends React.Component{
     constructor(props) {
@@ -153,9 +157,9 @@ export default class App extends React.Component{
                                     <button className="change-sol-Btn" type="submit">Change Sol</button>
                                 </form>
                                 <div>
-                                    <button className="navBtn" onClick={() => this.changeImgIndexA(1)} >Forward</button>
-                                    <button className="navBtn" onClick={this.changeImgIndex} >Random</button>
-                                    <button className="navBtn" onClick={() => this.changeImgIndexA(-1)} >Backward</button>
+                                    <button className="imgBtn btnLeft" onClick={() => this.changeImgIndexA(-1)} ><FontAwesomeIcon icon={faArrowLeft} /></button>
+                                    <button className="imgBtn btnRand" onClick={this.changeImgIndex} ><FontAwesomeIcon icon={faRandom} /></button>
+                                    <button className="imgBtn btnRight" onClick={() => this.changeImgIndexA(1)} ><FontAwesomeIcon icon={faArrowRight} /></button>
                                     </div>
                                 </div>)}
                             <Footer className="footer" />
