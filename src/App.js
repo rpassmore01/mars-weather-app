@@ -156,7 +156,7 @@ export default class App extends React.Component{
                                     <input className="change-sol" type="text" value={this.state.SolInput} onChange={this.changeInput}/>
                                     <button className="change-sol-Btn" type="submit">Change Sol</button>
                                 </form>
-                                <div>
+                                <div className="bottomButtonsDiv">
                                     <button className="imgBtn btnLeft" onClick={() => this.changeImgIndexA(-1)} ><FontAwesomeIcon icon={faArrowLeft} /></button>
                                     <button className="imgBtn btnRand" onClick={this.changeImgIndex} ><FontAwesomeIcon icon={faRandom} /></button>
                                     <button className="imgBtn btnRight" onClick={() => this.changeImgIndexA(1)} ><FontAwesomeIcon icon={faArrowRight} /></button>
@@ -164,7 +164,6 @@ export default class App extends React.Component{
                                 </div>)}
                             <Footer className="footer" />
                     </div>
-
                 )}
             </div>
         );
